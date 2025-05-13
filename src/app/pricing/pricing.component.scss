@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+  background-color: #f4f6f8; /* Light grey background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  color: #333; /* Darker text */
+}
+
+p {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #777; /* Grey paragraph text */
+}
+
+.d-flex.align-items-center.justify-content-center.pb-5 {
+  margin-bottom: 2rem; /* Add some space below the toggle buttons */
+}
+
+section h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px; /* Add some padding around the pricing plans */
+}
+
+.plan {
+  background-color: #fff;
+  padding: 2.5rem;
+  margin: 12px;
+  border-radius: 8px; /* More rounded corners */
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  border: 1px solid #ddd; /* Light border */
+
+  h2 {
+    font-size: 24px; /* Slightly larger heading */
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .price {
+    margin-bottom: 1.5rem; /* More space for price */
+    font-size: 36px; /* Larger price */
+    color: #007bff; /* Blue price color */
+    font-weight: 600;
+  }
+
+  ul.features {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 20px;
+    li {
+      margin: 10px 0; /* More vertical spacing */
+      color: #555;
+      .fa-icon {
+        margin-right: 8px;
+      }
+      .fa-check-circle {
+        color: #28a745; /* Green checkmark */
+      }
+      .fa-times-circle {
+        color: #dc3545; /* Red cross */
+      }
+    }
+  }
+
+  button {
+    border: none;
+    width: 100%;
+    padding: 14px 35px; /* More padding for button */
+    margin-top: 1.5rem;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  }
+
+  &.popular {
+    border: 2px solid #28a745; /* Green border for popular plan */
+    transform: scale(1.05); /* Slightly scale up popular plan */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+
+    span {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #28a745;
+      color: #fff;
+      padding: 6px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 5px;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+  }
+
+  &.selected {
+    border: 2px solid #ffc107; /* Yellow border for selected plan */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Style for the mat-button-toggle-group */
+mat-button-toggle-group {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+mat-button-toggle {
+  background-color: #fff;
+  color: #555;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &.mat-button-toggle-checked {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: #e9ecef;
+  }
+}
+.d-flex.align-items-center.justify-content-center section {
+  display: flex; /* Make the section a flex container */
+  justify-content: center; /* Center its content horizontally */
+  width: 100%; /* Ensure it takes the full width of the flex container */
+}
+
+.d-flex.align-items-center.justify-content-center section mat-button-toggle-group {
+  /* You might not need any specific width here if the section is controlling it */
+}

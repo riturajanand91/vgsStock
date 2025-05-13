@@ -1,0 +1,125 @@
+.compliance-container {
+  font-family: 'Roboto', sans-serif;
+  padding: 30px;
+  background-color: #f8f9fa; /* Light background */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .header {
+    margin-bottom: 30px;
+    text-align: center;
+
+    .title {
+      color: #343a40; /* Dark heading */
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      color: #6c757d; /* Subtitle color */
+      font-size: 1rem;
+    }
+  }
+
+  .loading-indicator,
+  .error-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  .loading-indicator {
+    color: #007bff;
+    background-color: #e7f3ff;
+    font-style: italic;
+  }
+
+  .error-message {
+    color: #dc3545;
+    background-color: #fdecea;
+    font-weight: bold;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Spacing between sections */
+  }
+
+  .section-title {
+    color: #343a40;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dee2e6; /* Subtle divider */
+    padding-bottom: 10px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto; /* For horizontal scrolling on smaller screens */
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+  }
+
+  .mat-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th.mat-header-cell {
+      font-weight: 600;
+      color: #495057;
+      padding: 16px;
+      background-color: #f2f2f2;
+      border-bottom: 2px solid #ccc;
+    }
+
+    td.mat-cell {
+      padding: 16px;
+      border-bottom: 1px solid #eee;
+      color: #555;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    tr.mat-row:hover {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .contact-link {
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .important-links {
+    p {
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 10px;
+
+      .external-link {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .scores-section {
+    margin-top: 40px;
+  }
+}

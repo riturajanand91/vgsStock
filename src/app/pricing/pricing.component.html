@@ -1,0 +1,61 @@
+<div class="demo" style="padding-top: 200px">
+  <div class="container">
+    </div>
+</div>
+
+<h1>Choose the plan that fits for your team</h1>
+<p>Deploy your sites to global infrastructure in seconds. No credit card required</p>
+
+<div *ngIf="isLoading" class="loading-indicator">
+  Loading pricing data...
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="!isLoading && !errorMessage">
+  <div class="d-flex align-items-center justify-content-center pb-5">
+    <section>
+  
+      <mat-button-toggle-group aria-label="Plan Type" [(ngModel)]="selectedPlanType">
+        <mat-button-toggle
+          *ngFor="let planType of allPlanTypes"
+          [value]="planType"
+          (change)="selectPlanType(planType)"
+        >
+          {{ planType | titlecase }}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </section>
+  </div>
+  <div class="pricing">
+    <div class="plan" *ngFor="let subscription of allSubscriptions">
+      <h2>{{ subscription.title }}</h2>
+      <div class="price">₹ {{ getDisplayedPrice(subscription.prices) }}</div>
+      <ul class="features">
+        <li *ngFor="let feature of subscription.features">
+          <fa-icon [icon]="faCheckCircle" class="text-success"></fa-icon>
+          {{ feature }}
+        </li>
+      </ul>
+      <button (click)="navigateToCheckout(subscription.id, selectedPlanType)">Get Started</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .loading-indicator {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+  }
+
+  .error-message {
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+  }
+</style>
