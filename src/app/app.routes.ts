@@ -4,6 +4,6 @@ import { PricingComponent } from './pricing/pricing.component';
 
 export const routes: Routes = [
   { path: '', component: ComplianceComponent },
-  { path: 'pricing', component: PricingComponent }
+  // { path: 'pricing', component: PricingComponent }
 ];
 

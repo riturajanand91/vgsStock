@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { Subject, takeUntil } from 'rxjs';
-import { ApiServiceService } from '../services/api-service.service';
+import { ApiService } from '../services/api.service';
 import { MatTableDataSource } from '@angular/material/table';
 
 interface ComplianceResponse {
@@ -64,7 +64,7 @@ export class ComplianceComponent implements OnInit, OnDestroy {
   displayedScoresColumns: string[] = ['received_from', 'pending_at_the_end_of_last_month', 'received', 'resolved', 'total_pending', 'pending_Complaints_gte_3_months', 'average_resolution_time'];
   scoresDataSource: MatTableDataSource<Score> = new MatTableDataSource<Score>([]);
 
-  constructor(private apiService: ApiServiceService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.loadComplianceData();

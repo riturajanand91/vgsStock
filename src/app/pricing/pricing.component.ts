@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
-import { ApiServiceService } from '../services/api-service.service';
 import { MaterialModule } from '../material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { ApiService } from '../services/api.service';
 
 interface PricingResponse {
   planTypes?: string[];
@@ -47,7 +47,7 @@ export class PricingComponent implements OnInit, OnDestroy {
   public isLoading: boolean = true;
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private apiService: ApiServiceService, private fb: FormBuilder) {
+  constructor(private apiService: ApiService, private fb: FormBuilder) {
     this.pricingForm = this.fb.group({
       planType: ['monthly'],
       planId: [null]
