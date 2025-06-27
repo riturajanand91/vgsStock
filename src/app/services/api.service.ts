@@ -7,7 +7,7 @@ export class ApiService {
   private readonly baseUrl = 'https://www.optumflex.live';
 
   /** put whatever value you need here */
-  private readonly xDomain = "https://vgstockresearch.com";   // e.g. "app.example.com"
+  private readonly xDomain = "vgstockresearch.com";   // e.g. "app.example.com"
 
   private get headers(): HttpHeaders {
     return new HttpHeaders({
