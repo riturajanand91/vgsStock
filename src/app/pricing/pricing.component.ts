@@ -31,11 +31,11 @@ interface Plan {
 }
 
 @Component({
-  selector: 'app-pricing',
-  standalone: true,
-  imports: [FormsModule, CommonModule, MaterialModule, FontAwesomeModule],
-  templateUrl: './pricing.component.html',
-  styleUrl: './pricing.component.scss'
+    selector: 'app-pricing',
+    standalone: true,
+    imports: [FormsModule, CommonModule, MaterialModule, FontAwesomeModule],
+    templateUrl: './pricing.component.html',
+    styleUrl: './pricing.component.scss'
 })
 export class PricingComponent implements OnInit, OnDestroy {
   public allSubscriptions: Plan[] = [];

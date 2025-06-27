@@ -47,11 +47,11 @@ interface Score {
 }
 
 @Component({
-  selector: 'app-compliance',
-  standalone: true,
-  imports: [CommonModule, MaterialModule],
-  templateUrl: './compliance.component.html',
-  styleUrl: './compliance.component.scss'
+    selector: 'app-compliance',
+    standalone: true,
+    imports: [CommonModule, MaterialModule],
+    templateUrl: './compliance.component.html',
+    styleUrl: './compliance.component.scss'
 })
 export class ComplianceComponent implements OnInit, OnDestroy {
   public errorMessage: string = '';
